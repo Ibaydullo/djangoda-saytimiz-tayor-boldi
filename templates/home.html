@@ -7,7 +7,7 @@
         <!--O'zim yaratgan forms boshlanish-->
         <form method="post" action="{% url 'logout' %}">
             {% csrf_token %}
-            <button type="submit">Logout</button>
+            <button type="submit" class="btn btn-danger">Logout</button>
         </form>
         <!--O'zim yaratgan forms boshlanish-->
     {% else %}
