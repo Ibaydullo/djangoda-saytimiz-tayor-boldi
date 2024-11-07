@@ -35,7 +35,10 @@
                           Kalit so'zni almashtrish
                       </a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="{% url 'logout' %}">Chiqib ketish</a>
+                      <form action="{% url 'logout' %}" method="post">
+                          {% csrf_token %}
+                          <button type="submit" class="dropdown-item">Chiqib ketish</button>
+                      </form>
                   </div>
               </li>
           </ul>
@@ -50,6 +53,7 @@
 
     <main>
         <div class="container-sm">
+            <br>
             {% block content %}
             {% endblock content %}
         </div>
