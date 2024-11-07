@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # men o'zim yaratgan applar
     'accounts',
     'pages',
+    'articles',
 ]
 
 MIDDLEWARE = [
@@ -111,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
@@ -131,9 +132,27 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
+# EMAIL BACKEND
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.example.com'  # SMTP server manzili
+# EMAIL_PORT = 587  # yoki 465, agar SSL dan foydalansangiz
+# EMAIL_USE_TLS = True  # True, agar TLS dan foydalanilsa
+# EMAIL_USE_SSL = False  # True, agar SSL dan foydalanilsa
+# EMAIL_HOST_USER = 'your_email@example.com'  # email manzili
+# EMAIL_HOST_PASSWORD = 'your_email_password'  # email paroli
+# DEFAULT_FROM_EMAIL = 'your_email@example.com'  # jo'natuvchi email manzili
+
+
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+# MEDIA
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))

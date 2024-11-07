@@ -5,7 +5,7 @@
     <h2>Ro'yxatdan o'tish</h2>
     <form method="post">{% csrf_token %}
         {{ form|crispy }}
-        {% csrf_token %}
+
         <button type="submit" class="btn btn-primary">Yuborish</button>
     </form>
 {% endblock content %}
